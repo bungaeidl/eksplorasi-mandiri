@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOADING </title>
+</head>
+<body>
+    <div id="app" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    </div>
+    <script>
+        onload = function () {
+            let id = document.getElementById("app")
+            let loading = document.createElement("div")
+
+            loading.textContent = "Loading"
+            loading.style.fontSize = "28px"
+            id.appendChild(loading)
+
+            let loaded = setInterval(() => {
+                loading.textContent = loading.textContent + "."
+            }, 1000)
+
+            setTimeout(() => {
+                clearInterval(loaded)
+                loading.textContent = "SELAMAT MENGERJAKAN UJIAN DENGAN JUJUR !"
+                setTimeout(() => {
+                window.location.href = "tampilan.html";
+                }, 3000);
+            }, 4000)
+        }
+    </script>
+</body>
+</html>
